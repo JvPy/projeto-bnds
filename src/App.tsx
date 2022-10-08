@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Footer from './components/footer';
+import Navbar from './components/navbar';
+import Section from './components/section';
+import WhatsappFloater from './components/whatsappFloater';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar />
+      <Section title="Section 1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque egestas tellus id auctor malesuada. Nulla eget augue imperdiet, vulputate lorem non, sodales eros. Ut blandit nec ante sagittis lacinia. Praesent finibus, nibh ac eleifend pulvinar, tellus odio aliquet nibh, maximus bibendum urna odio et arcu. Sed eleifend elit quis leo fringilla congue. Integer nec tortor placerat, eleifend eros porttitor, imperdiet eros. In sollicitudin tellus et nunc ullamcorper, ut mollis ipsum consequat. In eu turpis malesuada, vulputate elit in, viverra risus. Integer eleifend eleifend dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis ex non nulla sollicitudin lacinia eu ut lorem. Ut eget erat sit amet ex cursus pellentesque. Duis sagittis, neque a scelerisque venenatis, ex justo rhoncus ex, sit amet convallis dui sapien id odio. Duis feugiat diam a augue mollis vestibulum. Pellentesque finibus erat ullamcorper consequat tincidunt. Fusce rhoncus mattis turpis in tempor.
+
+Morbi efficitur aliquet vulputate. Quisque pretium, nulla ut facilisis laoreet, dolor augue lacinia risus, et bibendum arcu ipsum sit amet odio. Phasellus pharetra, augue non vestibulum fringilla, velit neque faucibus tellus, vitae elementum ante mi quis leo. Etiam accumsan blandit finibus. Cras at mi tincidunt, imperdiet mi non, pellentesque felis. Mauris a massa sit amet leo varius suscipit sit amet at nibh. Pellentesque luctus bibendum lorem, vitae scelerisque sapien malesuada ac. Integer dignissim neque eu mi ornare accumsan. Etiam feugiat tincidunt diam, eu consectetur erat rutrum sed. Vivamus vulputate porttitor aliquam.</Section>
+      <Section title="Section 2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque egestas tellus id auctor malesuada. Nulla eget augue imperdiet, vulputate lorem non, sodales eros. Ut blandit nec ante sagittis lacinia. Praesent finibus, nibh ac eleifend pulvinar, tellus odio aliquet nibh, maximus bibendum urna odio et arcu. Sed eleifend elit quis leo fringilla congue. Integer nec tortor placerat, eleifend eros porttitor, imperdiet eros. In sollicitudin tellus et nunc ullamcorper, ut mollis ipsum consequat. In eu turpis malesuada, vulputate elit in, viverra risus. Integer eleifend eleifend dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis ex non nulla sollicitudin lacinia eu ut lorem. Ut eget erat sit amet ex cursus pellentesque. Duis sagittis, neque a scelerisque venenatis, ex justo rhoncus ex, sit amet convallis dui sapien id odio. Duis feugiat diam a augue mollis vestibulum. Pellentesque finibus erat ullamcorper consequat tincidunt. Fusce rhoncus mattis turpis in tempor.
+
+Morbi efficitur aliquet vulputate. Quisque pretium, nulla ut facilisis laoreet, dolor augue lacinia risus, et bibendum arcu ipsum sit amet odio. Phasellus pharetra, augue non vestibulum fringilla, velit neque faucibus tellus, vitae elementum ante mi quis leo. Etiam accumsan blandit finibus. Cras at mi tincidunt, imperdiet mi non, pellentesque felis. Mauris a massa sit amet leo varius suscipit sit amet at nibh. Pellentesque luctus bibendum lorem, vitae scelerisque sapien malesuada ac. Integer dignissim neque eu mi ornare accumsan. Etiam feugiat tincidunt diam, eu consectetur erat rutrum sed. Vivamus vulputate porttitor aliquam.</Section>
+      <Section title="Section 3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque egestas tellus id auctor malesuada. Nulla eget augue imperdiet, vulputate lorem non, sodales eros. Ut blandit nec ante sagittis lacinia. Praesent finibus, nibh ac eleifend pulvinar, tellus odio aliquet nibh, maximus bibendum urna odio et arcu. Sed eleifend elit quis leo fringilla congue. Integer nec tortor placerat, eleifend eros porttitor, imperdiet eros. In sollicitudin tellus et nunc ullamcorper, ut mollis ipsum consequat. In eu turpis malesuada, vulputate elit in, viverra risus. Integer eleifend eleifend dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis ex non nulla sollicitudin lacinia eu ut lorem. Ut eget erat sit amet ex cursus pellentesque. Duis sagittis, neque a scelerisque venenatis, ex justo rhoncus ex, sit amet convallis dui sapien id odio. Duis feugiat diam a augue mollis vestibulum. Pellentesque finibus erat ullamcorper consequat tincidunt. Fusce rhoncus mattis turpis in tempor.
+
+Morbi efficitur aliquet vulputate. Quisque pretium, nulla ut facilisis laoreet, dolor augue lacinia risus, et bibendum arcu ipsum sit amet odio. Phasellus pharetra, augue non vestibulum fringilla, velit neque faucibus tellus, vitae elementum ante mi quis leo. Etiam accumsan blandit finibus. Cras at mi tincidunt, imperdiet mi non, pellentesque felis. Mauris a massa sit amet leo varius suscipit sit amet at nibh. Pellentesque luctus bibendum lorem, vitae scelerisque sapien malesuada ac. Integer dignissim neque eu mi ornare accumsan. Etiam feugiat tincidunt diam, eu consectetur erat rutrum sed. Vivamus vulputate porttitor aliquam.</Section>
+      <Section title="Section 4"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque egestas tellus id auctor malesuada. Nulla eget augue imperdiet, vulputate lorem non, sodales eros. Ut blandit nec ante sagittis lacinia. Praesent finibus, nibh ac eleifend pulvinar, tellus odio aliquet nibh, maximus bibendum urna odio et arcu. Sed eleifend elit quis leo fringilla congue. Integer nec tortor placerat, eleifend eros porttitor, imperdiet eros. In sollicitudin tellus et nunc ullamcorper, ut mollis ipsum consequat. In eu turpis malesuada, vulputate elit in, viverra risus. Integer eleifend eleifend dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis ex non nulla sollicitudin lacinia eu ut lorem. Ut eget erat sit amet ex cursus pellentesque. Duis sagittis, neque a scelerisque venenatis, ex justo rhoncus ex, sit amet convallis dui sapien id odio. Duis feugiat diam a augue mollis vestibulum. Pellentesque finibus erat ullamcorper consequat tincidunt. Fusce rhoncus mattis turpis in tempor.
+
+Morbi efficitur aliquet vulputate. Quisque pretium, nulla ut facilisis laoreet, dolor augue lacinia risus, et bibendum arcu ipsum sit amet odio. Phasellus pharetra, augue non vestibulum fringilla, velit neque faucibus tellus, vitae elementum ante mi quis leo. Etiam accumsan blandit finibus. Cras at mi tincidunt, imperdiet mi non, pellentesque felis. Mauris a massa sit amet leo varius suscipit sit amet at nibh. Pellentesque luctus bibendum lorem, vitae scelerisque sapien malesuada ac. Integer dignissim neque eu mi ornare accumsan. Etiam feugiat tincidunt diam, eu consectetur erat rutrum sed. Vivamus vulputate porttitor aliquam.</Section>
+      <WhatsappFloater />
+      <Footer />
+    </>
+  )
 }
 
 export default App;
