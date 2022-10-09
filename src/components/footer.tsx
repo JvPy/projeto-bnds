@@ -4,13 +4,16 @@ import React from 'react'
 const FooterSection = styled('div')(() => ({
     background: 'darkgrey',
     color: 'white',
-    maxHeight: '10vh'
+    maxHeight: '10vh',
+    justifyContent: 'center',
+    display: 'flex',
+    padding: 20
 }))
 
 const Footer = () => {
     return (
         <FooterSection>
-            All rights reserved
+            Hackathon BNDES 2022
         </FooterSection>
     )
 }
