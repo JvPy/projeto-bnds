@@ -31,7 +31,7 @@ const NextSection = styled('div')(() => ({
 }))
 
 const NextSectionButton = styled(Button)(() => ({
-    fontSize: 32,
+    fontSize: 16,
     border: '1px solid blue'
 }))
 
@@ -39,7 +39,11 @@ const Section = ({children, title, id, nextSection, color, image, handleOpen}: a
     return (
         <PageSection id={id} style={{backgroundColor: color}}>
             <Title>{title}</Title>
-            {image && <img src={loan} alt='' style={{ width: '100%', height: '30vh' }}/>}
+                {image && 
+                    <NextSection>
+                        <img src={loan} alt='' style={{ maxWidth: '80%', maxHeight: '30vh' }}/>
+                    </NextSection>
+                }
             <Text>
                 {children}
             </Text>
