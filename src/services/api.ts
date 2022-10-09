@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const blockchainAPI = axios.create({
-  baseURL: "",
+  baseURL: "https://blockchain-bndes.herokuapp.com",
 });

@@ -44,7 +44,10 @@ const NextSectionButton = styled(Button)(() => ({
     border: '1px solid #5EB245',
     marginTop: 17,
     color: 'white',
-    background: '#5EB245'
+    background: '#5EB245',
+    '&:hover': {
+        color:'#5EB245'
+    }
 }))
 
 const getImage = (image:string) => {

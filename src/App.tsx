@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
 import Section from './components/section';
@@ -62,13 +62,8 @@ function App() {
         <br /><br />
         No Ensina Facil BNDES, você encontra parceiros que irão ajudar a colocar seu projeto em ação. (colocar o logo dos parceiros do BNDES).
       </Section>
-      <Section id="3" title="Como me formalizar como Microempreendedor individual? " color="#F5F5F5" image="form"> 
-        Através do site www.gov.br- cadastrar Microempreendedor Individual (MEI), preencha o formulário de inscrição de MEI. Assinale as declarações e finalize.
-        <br /><br />
-        Não há custos, é gratuito. E sua despesa mensal será apenas o pagamento mensal do Simples Nacional. Independentemente do valor das notas fiscais que você emitir no mês (e mesmo se não emitir), você vai pagar apenas o valor mensal correspondente a sua área de atuação.
-      </Section>
-      <AccordionSection id="4" title="Microempreendedor Individual-MEI" color="#F1F1F1" image="deal" handleOpen={handleOpen} handleClose={handleClose} final />
-      <Section id="5" title="Pronto pra responder o Quiz?" color="#F1F1F1" image="quiz" handleOpen={handleOpen} handleClose={handleClose} final />
+      <AccordionSection id="4" title="Microempreendedor Individual-MEI" color="#F5F5F5" image="form" handleOpen={handleOpen} handleClose={handleClose} final />
+      <Section id="4" title="Pronto pra responder o Quiz?" color="#F1F1F1" image="quiz" handleOpen={handleOpen} handleClose={handleClose} final />
       <WhatsappFloater />
       <ShareFloater />
       <Footer />
