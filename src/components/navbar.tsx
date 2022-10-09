@@ -1,34 +1,50 @@
-import { styled } from '@mui/system';
-import React from 'react'
+import { AppBar, Button, Drawer, IconButton, Link, List, ListItem, ListItemText, Toolbar, Typography } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState } from 'react'
 
-const NavbarSection = styled('div')(() => ({
-    background: 'lightgrey',
-    color: 'white',
-    maxHeight: '10vh',
-    display: 'flex',
-    justifyContent: 'center',
-    position: 'fixed',
-    width: '100%',
-    fontSize: 26,
-    flexDirection: 'column',
-    alignItems: 'center',
-    border: '1px solid white',
-    zIndex: 100
-}))
+interface MyProps {
+    handleScrol: (id: string) => void
+}
 
-const Separator = styled('span')(() => ({
-    border: '0.5px solid white',
-    width: '90%'
-}))
+const Navbar = ({handleScrol}:MyProps) => {
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-const Navbar = () => {
+    const handleClose = (id: string) =>  handleScrol(id)
+    
+    const menuOptions = ["O bnds", "Empreendedorismo", "Mei", "Formalizar"]
+    
     return (
-        <NavbarSection>
-            BNDES
-            <Separator />
-            Portal do microcredito
-        </NavbarSection>
+        <AppBar position="fixed" style={{background: '#284141'}}>
+            <Toolbar>
+                <IconButton
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    aria-label="menu"
+                    sx={{ mr: 2 }}
+                    onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                >
+                    <MenuIcon />
+                    <Drawer open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
+                        <List>
+                            {
+                                menuOptions.map((item, index) => (
+                                    <ListItem key={item} button onClick={() => handleClose(index.toString())}>
+                                        <ListItemText primary={item} />
+                                    </ListItem>
+                                ))
+                            }
+                        </List>
+                    </Drawer>
+                </IconButton>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    BNDES - Micro Credito
+                </Typography>
+                <Button color="inherit">Home</Button>
+            </Toolbar>
+        </AppBar>
     )
 }
+
 
 export default Navbar;

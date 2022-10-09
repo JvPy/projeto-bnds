@@ -1,5 +1,17 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
+import { 
+    Accordion, 
+    AccordionDetails, 
+    AccordionSummary, 
+    Button, 
+    Dialog, 
+    DialogActions, 
+    DialogContent, 
+    DialogTitle, 
+    Typography 
+} from '@mui/material';
+import { styled } from '@mui/system';
 import React from 'react'
+import Question from './question';
 
 interface MyProps {
     isOpen: boolean,
@@ -7,13 +19,26 @@ interface MyProps {
     handleSend?: () => void,
 }
 
+const QuizButton = styled(Button)(() => ({
+    background: '#5EB245',
+    color: '#284141',
+    border: '1px solid #5EB245'
+}))
+
 const Modal = ({isOpen, handleClose, handleSend}: MyProps) => {
+    const [expanded, setExpanded] = React.useState<string | false>('panel1');
+
+    const handleChange =
+      (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+        setExpanded(newExpanded ? panel : false);
+      };
+      
     return (
         <Dialog open={isOpen}>
             <DialogTitle id="responsive-dialog-title">
                 Quiz !
             </DialogTitle>
-            <DialogContent>
+            {/* <DialogContent>
                 <DialogContentText>
                     Veja o video abaixo e se prepare para o quiz!
                     <iframe src='https://www.youtube.com/embed/E7wJTI-1dvQ'
@@ -23,32 +48,55 @@ const Modal = ({isOpen, handleClose, handleSend}: MyProps) => {
                         title='video'
                     />
                 </DialogContentText>
-            </DialogContent>
+            </DialogContent> */}
             <DialogContent>
-                <DialogContentText>
-                    O que significa BNDES
-
-                    <FormControl>
-                        <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
-                        <RadioGroup
-                            aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue="female"
-                            name="radio-buttons-group"
-                        >
-                            <FormControlLabel value="female" control={<Radio />} label="Banco Nacional" />
-                            <FormControlLabel value="male" control={<Radio />} label="Banco Internacional" />
-                            <FormControlLabel value="other" control={<Radio />} label="Banco Nacional de Desenvolvimento Econômico e Social" />
-                        </RadioGroup>
-                        </FormControl>
-                </DialogContentText>
+                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                        <Typography>O que significa BNDES</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Question 
+                            option1='Banco Nacional' 
+                            option2='Banco Internacional' 
+                            option3='Banco Nacional de Desenvolvimento Econômico e Social' 
+                            questionNumber={1}
+                        />
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                    <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
+                        <Typography>Collapsible Group Item #2</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Question 
+                            option1='Banco Nacional' 
+                            option2='Banco Internacional' 
+                            option3='Banco Nacional de Desenvolvimento Econômico e Social' 
+                            questionNumber={2}
+                        />
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                    <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+                        <Typography>Collapsible Group Item #3</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Question 
+                            option1='Banco Nacional' 
+                            option2='Banco Internacional' 
+                            option3='Banco Nacional de Desenvolvimento Econômico e Social' 
+                            questionNumber={3}
+                        />
+                    </AccordionDetails>
+                </Accordion>
             </DialogContent>
             <DialogActions>
-                <Button autoFocus onClick={() => handleClose()}>
+                <QuizButton autoFocus onClick={() => handleClose()}>
                     Fechar
-                </Button>
-                <Button onClick={() => handleClose()} autoFocus>
+                </QuizButton>
+                <QuizButton onClick={() => handleClose()} autoFocus>
                     Enviar
-                </Button>
+                </QuizButton>
             </DialogActions>
         </Dialog>
     );
