@@ -11,8 +11,6 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 import React from 'react'
-import { blockchainAPI } from '../services/api';
-import { BlockchainService } from '../services/blockchainService';
 import Question from './question';
 
 interface MyProps {
@@ -115,6 +113,7 @@ const Modal = ({isOpen, handleClose}: MyProps) => {
     const [expanded, setExpanded] = React.useState<string | false>('panel0');
     const [options, setOptions] = React.useState<string[]>([]);
     const [disabled, setDisabled] = React.useState(true)
+    const [certificate, setCertificate] = React.useState(false)
 
     const handleChange =
       (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
@@ -128,21 +127,24 @@ const Modal = ({isOpen, handleClose}: MyProps) => {
     }
 
     const handleSend = () => {
-        BlockchainService.setCertificate({
-            certificate: "bndes",
-            kind: "microcredito",
-            phone: "123456"
-        })
-        handleClose()
+        // BlockchainService.setCertificate({
+        //     certificate: "bndes",
+        //     kind: "microcredito",
+        //     phone: "123456"
+        // })
+        // handleClose()
+        setCertificate(true);
     }
       
     return (
         <Dialog open={isOpen}>
             <DialogTitle id="responsive-dialog-title">
-                Quiz !
+                {certificate ? "Salve o numero do seu certificado!" : "Quiz !"}
             </DialogTitle>
+            
             <DialogContent>
-                {
+                {certificate && <div> e61f5a12e0823b128cab8a2bfe1bfbe4 </div>}
+                {!certificate &&
                     questions.map((question, index) => {
                         return (
                             <Accordion expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
@@ -164,7 +166,7 @@ const Modal = ({isOpen, handleClose}: MyProps) => {
                 <QuizButton autoFocus onClick={() => handleClose()}>
                     Fechar
                 </QuizButton>
-                <QuizButton onClick={() => handleSend()} autoFocus disabled={disabled}>
+                <QuizButton onClick={() => handleSend()} autoFocus disabled={disabled && !certificate}>
                     Enviar
                 </QuizButton>
             </DialogActions>
