@@ -12,7 +12,6 @@ import quiz from '../static/quiz.svg'
 const PageSection = styled('div')(() => ({
     padding: 40,
     minHeight: '60vh',
-    width: '87%'
 }));
 
 const Title = styled(Typography)(() => ({

@@ -1,20 +1,25 @@
 import { AppBar, Button, Drawer, IconButton, Link, List, ListItem, ListItemText, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { styled } from '@mui/system';
 import React, { useState } from 'react'
 
 interface MyProps {
     handleScrol: (id: string) => void
 }
 
+const StyledAppBar = styled(AppBar)(() => ({
+    background: '#284141'
+}))
+
 const Navbar = ({handleScrol}:MyProps) => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     const handleClose = (id: string) =>  handleScrol(id)
     
-    const menuOptions = ["O bnds", "Empreendedorismo", "Mei", "Formalizar"]
+    const menuOptions = ["O BNDES", "Empreendedorismo", "Mei", "Formalizar"]
     
     return (
-        <AppBar position="fixed" style={{background: '#284141'}}>
+        <StyledAppBar position="fixed">
             <Toolbar>
                 <IconButton
                     size="large"
@@ -42,7 +47,7 @@ const Navbar = ({handleScrol}:MyProps) => {
                 </Typography>
                 <Button color="inherit">Home</Button>
             </Toolbar>
-        </AppBar>
+        </StyledAppBar>
     )
 }
 

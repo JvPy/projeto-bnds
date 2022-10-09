@@ -26,7 +26,7 @@ function App() {
       <Navbar handleScrol={handleScrol}/>
       <div style={{paddingTop: 55}}/>
       <Modal isOpen={isOpen} handleClose={() => handleClose()}/>
-      <Section id="0"  subTitle="Microcredito no Brasil" title="Você conhece o BNDES?" color="#F1F1F1" image="vault"> 
+      <Section id="0" subTitle="Microcredito no Brasil" title="Você conhece o BNDES?" color="#F1F1F1" image="vault"> 
         O BNDES é o Banco Nacional de Desenvolvimento Econômico e Social, uma empresa pública federal vinculado ao Ministério da Economia, sendo o principal instrumento do governo Federal, para financiamento a longo prazo e investimento nos diversos segmentos. Seus principais objetivos são: Apoiar programas, projetos, obras e serviços que se relacionam com o desenvolvimento econômico e social do País; e estimular a iniciativa privada, sem prejuízos de apoio a empreendimentos de interesse nacional a cargo do setor público.
         <br /><br />
         Pensando em você, que acredita que pode colaborar com o desenvolvimento econômico do nosso País, o BNDES te apresenta um jeito inovador e prático que facilitará sua nova jornada para a construção do seu negócio. A Ensina Fácil.
@@ -34,7 +34,7 @@ function App() {
         A Ensina Fácil, é um jeito fácil e pratico que vai tirar suas dúvidas, te orientar, te ensinar e te preparar os caminhos a serem percorridos, para que você alcance o sucesso no seu novo negócio.
         <br /><br />
         Aqui você vai entender sobre empreendedorismo e como abrir e ou alavancar o seu negócio. Te daremos base para saber se você está pronto para empreender
-      </ Section> 
+      </Section> 
       <Section id="1" title="Empreender: O significado" color="#F5F5F5" image="business">
         Significa pôr em pratica, executar, fazer, realizar. Pode ser começar uma empresa, um projeto no trabalho, uma ação no bairro, uma lojinha, etc. Empreender é começar de forma organizada o seu negócio, é fazer acontecer.
         <br /><br />
