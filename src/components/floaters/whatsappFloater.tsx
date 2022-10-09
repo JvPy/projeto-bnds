@@ -13,7 +13,7 @@ const WhatsappFloater = () => {
     const encodedUri = encodeURI(uri);
 
     return (
-        <Link href={`https://wa.me/5517991824123?${encodedUri}`}>
+        <Link href={`https://wa.me/5511945652383?${encodedUri}`}>
             <StyledFloater>
                 <WhatsAppIcon />
             </StyledFloater>
