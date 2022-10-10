@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
 import Section from './components/section';
@@ -9,6 +9,10 @@ import AccordionSection from './components/accordionSection';
 
 function App() {
   const [isOpen, setIsOpen] = useState<boolean>(false)
+
+  useEffect(() => {
+    document.title = "Ensina Fácil"
+  }, [])
 
   const handleClose = () => setIsOpen(false);
   
@@ -29,7 +33,7 @@ function App() {
       <Navbar handleScrol={handleScrol}/>
       <div style={{paddingTop: 55}}/>
       <Modal isOpen={isOpen} handleClose={() => handleClose()}/>
-      <Section id="0" subTitle="Microcredito no Brasil" title="Você conhece o BNDES?" color="#F1F1F1" image="vault"> 
+      <Section id="0" subTitle="Ensina Fácil" title="Você conhece o BNDES?" color="#F1F1F1" image="vault"> 
         O BNDES é o Banco Nacional de Desenvolvimento Econômico e Social, uma empresa pública federal vinculada ao Ministério da Economia, sendo o principal instrumento do governo Federal, para financiamento a longo prazo e investimento nos diversos segmentos.
         <br /><br />
         Seus principais objetivos são: Apoiar programas, projetos, obras e serviços que se relacionam com o desenvolvimento econômico e social do País; e estimular a iniciativa privada, sem prejuízos de apoio a empreendimentos de interesse nacional a cargo do setor público.
