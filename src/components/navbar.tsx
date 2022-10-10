@@ -43,7 +43,7 @@ const Navbar = ({handleScrol}:MyProps) => {
                     </Drawer>
                 </IconButton>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    BNDES - Micro Credito
+                    BNDES - Ensina Fácil
                 </Typography>
                 <Button color="inherit">Home</Button>
             </Toolbar>

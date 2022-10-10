@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 import React from 'react'
+import { BlockchainService } from '../services/blockchainService';
 import Question from './question';
 
 interface MyProps {
@@ -127,12 +128,12 @@ const Modal = ({isOpen, handleClose}: MyProps) => {
     }
 
     const handleSend = () => {
-        // BlockchainService.setCertificate({
-        //     certificate: "bndes",
-        //     kind: "microcredito",
-        //     phone: "123456"
-        // })
-        // handleClose()
+        BlockchainService.setCertificate({
+            certificate: "bndes",
+            kind: "microcredito",
+            phone: "123456"
+        })
+        handleClose()
         setCertificate(true);
     }
       
